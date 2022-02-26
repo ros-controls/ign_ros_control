@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<launch>
+
+        <arg name="world"      default="empty"/>
+        <arg name="controller" default="joint_position_controller"/>
+        <arg name="ign_args"   default=""/>
+
+        <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
+          <arg name="ign_args" value="-r -v 3 $(arg world).sdf"/>
+        </include>
+
+        <!-- send robot urdf to param server -->
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ign_ros_control_demos)/urdf/cartpole.urdf.xacro' controller:=$(arg controller)"/>
+
+        <node
+          pkg="ros_ign_gazebo"
+          type="create"
+          name="cartpole_test"
+          output="screen"
+          args="-world $(arg world) -param robot_description -name spawned -allow_renaming true -z 0.0">
+        </node>
+
+        <!-- Loading controller configurations from YAML file to parameter server -->
+        <rosparam file="$(find ign_ros_control_demos)/params/joint_state_publisher.yaml" command="load"/>
+        <rosparam file="$(find ign_ros_control_demos)/params/$(arg controller).yaml"     command="load"/>
+
+        <!-- Spawn controllers -->
+        <node name="controller_spawner"
+              pkg="controller_manager" type="spawner" output="screen"
+              args="joint_state_publisher $(arg controller)" />
+
+</launch>
+
+

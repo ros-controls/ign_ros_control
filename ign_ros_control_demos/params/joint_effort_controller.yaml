@@ -1,0 +1,3 @@
+joint_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: slider_to_cart

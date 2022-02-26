@@ -1,0 +1,6 @@
+joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: slider_to_cart
+  pid:
+    p: 100.0
+    d: 10.0

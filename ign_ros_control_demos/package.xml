@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ign_ros_control_demos</name>
+  <version>0.0.0</version>
+  <description>Ignition ros_control package demos.</description>
+  <maintainer email="gennaro.raiola@gmail.com">graiola</maintainer>
+  <author>Gennaro Raiola</author>
+  <license>Apache 2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

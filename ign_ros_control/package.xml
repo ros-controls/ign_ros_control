@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ign_ros_control</name>
+  <version>0.0.0</version>
+  <description>Ignition ros_control package allows to control simulated robots using ros_control framework.</description>
+  <maintainer email="gennaro.raiola@gmail.com">graiola</maintainer>
+  <author>Gennaro Raiola</author>
+  <license>Apache 2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>ignition-common3</depend>
+  <depend>ignition-launch2</depend>
+  <depend>ignition-math6</depend>
+  <depend>ignition-msgs6</depend>
+  <depend>ignition-plugin1</depend>
+  <depend>ignition-transport9</depend>
+
+  <depend>roscpp</depend>
+  <depend>pluginlib</depend>
+  <depend>urdf</depend>
+  <depend>transmission_interface</depend>
+  <depend>hardware_interface</depend>
+  <depend>controller_manager</depend>
+
+  <export>
+    <ign_ros_control plugin="${prefix}/ign_ros_control_plugin.xml"/>
+  </export>
+</package>

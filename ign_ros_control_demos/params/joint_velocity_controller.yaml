@@ -1,0 +1,7 @@
+joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: slider_to_cart
+  pid:
+    p: 5.0
+    i: 20.0
+    i_clamp: 100.0
