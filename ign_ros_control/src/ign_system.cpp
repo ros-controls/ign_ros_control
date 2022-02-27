@@ -28,8 +28,6 @@
 #include <ignition/gazebo/components/Pose.hh>
 #include <ignition/gazebo/components/Sensor.hh>
 
-#include <ignition/msgs/imu.pb.h>
-
 #include <ignition/transport/Node.hh>
 
 #include <limits>
