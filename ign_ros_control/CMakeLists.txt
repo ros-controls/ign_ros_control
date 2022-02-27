@@ -32,7 +32,7 @@ find_package(ignition-plugin1 REQUIRED)
 set(IGN_PLUGIN_VER ${ignition-plugin1_VERSION_MAJOR})
 
 catkin_package(
-  LIBRARIES ign_ros_control
+  LIBRARIES ign_ros_control_system ign_ros_control_plugin
   INCLUDE_DIRS include)
 
 include_directories(include ${catkin_INCLUDE_DIRS})
