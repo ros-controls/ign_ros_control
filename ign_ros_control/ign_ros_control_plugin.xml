@@ -4,7 +4,7 @@
     type="ign_ros_control::IgnitionSystem"
     base_class_type="ign_ros_control::IgnitionSystemInterface">
     <description>
-      GazeboPositionJoint
+      Ignition ROS Control plugin
     </description>
   </class>
 </library>
