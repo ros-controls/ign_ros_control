@@ -4,7 +4,7 @@
     type="ign_ros_control::IgnitionSystem"
     base_class_type="ign_ros_control::IgnitionSystemInterface">
     <description>
-      Ignition ROS Control plugin
+      Ignition ros_control plugin
     </description>
   </class>
 </library>

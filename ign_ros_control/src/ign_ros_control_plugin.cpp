@@ -1,4 +1,4 @@
-// Copyright 2022 The ROS-Control team.
+// Copyright 2022 The ros_control team.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,9 +30,7 @@
 #include <ros/ros.h>
 
 #include <controller_manager/controller_manager.h>
-
 #include <hardware_interface/interface_resources.h>
-
 #include <transmission_interface/transmission_parser.h>
 
 #include <pluginlib/class_loader.hpp>

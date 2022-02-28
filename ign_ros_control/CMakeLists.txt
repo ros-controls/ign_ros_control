@@ -25,8 +25,31 @@ find_package(catkin REQUIRED COMPONENTS
     urdf
     )
 
-find_package(ignition-gazebo4 REQUIRED)
-set(IGN_GAZEBO_VER ${ignition-gazebo4_VERSION_MAJOR})
+if("$ENV{IGNITION_VERSION}" STREQUAL "citadel")
+  find_package(ignition-gazebo3 REQUIRED)
+  set(IGN_GAZEBO_VER ${ignition-gazebo3_VERSION_MAJOR})
+  message(STATUS "Compiling against Ignition Citadel")
+
+elseif("$ENV{IGNITION_VERSION}" STREQUAL "dome")
+  find_package(ignition-gazebo4 REQUIRED)
+  set(IGN_GAZEBO_VER ${ignition-gazebo4_VERSION_MAJOR})
+  message(STATUS "Compiling against Ignition Dome")
+
+elseif("$ENV{IGNITION_VERSION}" STREQUAL "edifice")
+  find_package(ignition-gazebo5 REQUIRED)
+  set(IGN_GAZEBO_VER ${ignition-gazebo5_VERSION_MAJOR})
+  message(STATUS "Compiling against Ignition Edifice")
+
+elseif("$ENV{IGNITION_VERSION}" STREQUAL "fortress")
+  find_package(ignition-gazebo6 REQUIRED)
+  set(IGN_GAZEBO_VER ${ignition-gazebo6_VERSION_MAJOR})
+  message(STATUS "Compiling against Ignition Fortress")
+
+else()
+  find_package(ignition-gazebo4 REQUIRED)
+  set(IGN_GAZEBO_VER ${ignition-gazebo4_VERSION_MAJOR})
+  message(STATUS "Compiling against Ignition Dome")
+endif()
 
 find_package(ignition-plugin1 REQUIRED)
 set(IGN_PLUGIN_VER ${ignition-plugin1_VERSION_MAJOR})
@@ -62,5 +85,5 @@ install(TARGETS ign_ros_control_system ign_ros_control_plugin
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-install(FILES ign_ros_control_plugin.xml
+install(FILES ign_ros_control_plugins.xml
 DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

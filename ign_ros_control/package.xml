@@ -24,6 +24,6 @@
   <depend>controller_manager</depend>
 
   <export>
-    <ign_ros_control plugin="${prefix}/ign_ros_control_plugin.xml"/>
+    <ign_ros_control plugin="${prefix}/ign_ros_control_plugins.xml"/>
   </export>
 </package>

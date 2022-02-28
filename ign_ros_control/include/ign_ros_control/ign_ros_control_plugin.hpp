@@ -1,4 +1,4 @@
-// Copyright 2022 The ROS-Control team.
+// Copyright 2022 The ros_control team.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public:
       const ignition::gazebo::UpdateInfo & _info,
       ignition::gazebo::EntityComponentManager & _ecm) override;
 
+  // Documentation inherited
   void PostUpdate(
       const ignition::gazebo::UpdateInfo & _info,
       const ignition::gazebo::EntityComponentManager & _ecm) override;
@@ -58,6 +59,6 @@ private:
   /// \brief Private data pointer.
   std::unique_ptr<IgnitionROSControlPluginPrivate> dataPtr;
 };
-}  // namespace ign_ROS_control
+}  // namespace ign_ros_control
 
 #endif  // IGN_ROS_CONTROL__IGN_ROS_CONTROL_PLUGIN_HPP_

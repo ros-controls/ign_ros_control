@@ -1,4 +1,4 @@
-// Copyright 2022 The ROS-Control team.
+// Copyright 2022 The ros_control team.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,20 +14,13 @@
 
 #include "ign_ros_control/ign_system.hpp"
 
-#include <ignition/gazebo/components/AngularVelocity.hh>
-#include <ignition/gazebo/components/Imu.hh>
 #include <ignition/gazebo/components/JointForce.hh>
 #include <ignition/gazebo/components/JointForceCmd.hh>
 #include <ignition/gazebo/components/JointPosition.hh>
-#include <ignition/gazebo/components/JointPositionReset.hh>
 #include <ignition/gazebo/components/JointVelocity.hh>
 #include <ignition/gazebo/components/JointVelocityCmd.hh>
-#include <ignition/gazebo/components/LinearAcceleration.hh>
 #include <ignition/gazebo/components/Name.hh>
 #include <ignition/gazebo/components/ParentEntity.hh>
-#include <ignition/gazebo/components/Pose.hh>
-#include <ignition/gazebo/components/Sensor.hh>
-
 #include <ignition/transport/Node.hh>
 
 #include <limits>
@@ -260,7 +253,7 @@ void IgnitionSystem::read()
         this->dataPtr->ecm_->Component<ignition::gazebo::components::JointVelocity>(
           this->dataPtr->joints_[i].sim_joint);
 
-    // TODO(ahcorde): Revisit this part ignitionrobotics/ign-physics#124
+    // TODO Same issue as in https://github.com/ignitionrobotics/ign_ros2_control/blob/main/ign_ros2_control/src/ign_system.cpp#L413-L417
     // Get the joint force
     //const auto * jointForce =
     //  this->dataPtr->ecm_->Component<ignition::gazebo::components::JointForce>(

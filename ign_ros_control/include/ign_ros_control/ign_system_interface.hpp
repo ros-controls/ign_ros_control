@@ -1,4 +1,4 @@
-// Copyright 2022 The ROS-Control team.
+// Copyright 2022 The ros_control team.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 
 #ifndef IGN_ROS_CONTROL__IGN_SYSTEM_INTERFACE_HPP_
 #define IGN_ROS_CONTROL__IGN_SYSTEM_INTERFACE_HPP_
