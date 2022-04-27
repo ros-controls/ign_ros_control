@@ -85,5 +85,8 @@ install(TARGETS ign_ros_control_system ign_ros_control_plugin
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+install(DIRECTORY include/${PROJECT_NAME}/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+
 install(FILES ign_ros_control_plugins.xml
 DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
