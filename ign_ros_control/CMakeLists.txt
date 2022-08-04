@@ -46,8 +46,8 @@ elseif("$ENV{IGNITION_VERSION}" STREQUAL "fortress")
   message(STATUS "Compiling against Ignition Fortress")
 
 else()
-  find_package(ignition-gazebo4 REQUIRED)
-  set(IGN_GAZEBO_VER ${ignition-gazebo4_VERSION_MAJOR})
+  find_package(ignition-gazebo3 REQUIRED)
+  set(IGN_GAZEBO_VER ${ignition-gazebo3_VERSION_MAJOR})
   message(STATUS "Compiling against Ignition Dome")
 endif()
 
