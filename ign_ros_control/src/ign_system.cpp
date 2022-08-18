@@ -253,7 +253,7 @@ void IgnitionSystem::read()
         this->dataPtr->ecm_->Component<ignition::gazebo::components::JointVelocity>(
           this->dataPtr->joints_[i].sim_joint);
 
-    // TODO Same issue as in https://github.com/ignitionrobotics/ign_ros2_control/blob/main/ign_ros2_control/src/ign_system.cpp#L413-L417
+    // TODO Same issue as in https://github.com/ignitionrobotics/ign_ros2_control/blob/main/ign_ros2_control/src/ign_system.cpp
     // Get the joint force
     //const auto * jointForce =
     //  this->dataPtr->ecm_->Component<ignition::gazebo::components::JointForce>(
@@ -267,6 +267,7 @@ void IgnitionSystem::read()
     this->dataPtr->joints_[i].joint_position = jointPositions->Data()[0];
     this->dataPtr->joints_[i].joint_velocity = jointVelocity->Data()[0];
     //this->dataPtr->joints_[i].joint_effort   = jointForce->Data()[0];
+    this->dataPtr->joints_[i].joint_effort   = this->dataPtr->joints_[i].joint_effort_cmd;
   }
 }
 
